@@ -53,22 +53,31 @@ def register():
                 db.session.commit()
                 return redirect(url_for('login'))
 
+
 @app.context_processor
 def my_content_processor():
     user_id = session.get('user_id')
     if user_id:
         user = User.query.filter(User.id == user_id).first()
         if user:
-            return {'user':user}
+            return {'user': user}
     return {}
 
-@app.route('logout')
+
+@app.route('/logout/')
 def logout():
     session.pop('user_id')
-    #del  session.__delattr__('user_id')
+    # del  session.__delattr__('user_id')
     # session.clear
-    return redirect('index')
+    return redirect(url_for('index'))
 
+
+@app.route('/question/',methods=['GET', 'POST'])
+def question():
+    if request.method == 'GET':
+        return render_template('question.html')
+    else:
+        pass
 
 
 if __name__ == '__main__':
