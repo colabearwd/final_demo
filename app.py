@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import config
 from models import User
 from exts import db
+from decorator import login_required
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -11,6 +12,7 @@ db.init_app(app)
 
 @app.route('/')
 @app.route('/index')
+
 def index():
     return render_template('index.html')
 
@@ -64,6 +66,10 @@ def my_content_processor():
     return {}
 
 
+
+
+
+
 @app.route('/logout/')
 def logout():
     session.pop('user_id')
@@ -73,6 +79,7 @@ def logout():
 
 
 @app.route('/question/',methods=['GET', 'POST'])
+@login_required
 def question():
     if request.method == 'GET':
         return render_template('question.html')
