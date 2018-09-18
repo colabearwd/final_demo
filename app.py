@@ -19,6 +19,12 @@ def index():
     }
     return render_template('index.html' ,**context)
 
+@app.route('/detail/<question_id>')
+def detail(question_id):
+    question_model = Question.query.filter(Question.id == question_id).first()
+
+    return render_template('detail.html',question = question_model)
+
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
