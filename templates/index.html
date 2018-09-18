@@ -4,6 +4,51 @@
     首页
 {% endblock %}
 
+{% block head %}
+    <link href="{{ url_for('static' ,filename='css/index.css') }}" rel="stylesheet">
+
+{% endblock %}
+
 {% block main %}
-    这是首页
+    <ul>
+    <li>
+        <div class="avatar-group">
+            <img class="avatar" src="{{ url_for('static' , filename='images/avatar01.jpg') }}" alt="">
+        </div>
+        <div class="question-group">
+            <p class="question-title"><a href="#">this is the title</a> </p>
+            <p class="question-content">this is the content </p>
+            <div class="question-info">
+                <span class="question-author">作者</span>
+                <span class="question-time">2017-08-24 15:45:45</span>
+            </div>
+        </div>
+    </li>
+        <li>
+        <div class="avatar-group">
+            <img class="avatar" src="{{ url_for('static' , filename='images/avatar01.jpg') }}" alt="">
+        </div>
+        <div class="question-group">
+            <p class="question-title"><a href="#">this is the title</a> </p>
+            <p class="question-content">this is the content </p>
+            <div class="question-info">
+                <span class="question-author">作者</span>
+                <span class="question-time">2017-08-24 15:45:45</span>
+            </div>
+        </div>
+    </li>
+        <li>
+        <div class="avatar-group">
+            <img class="avatar" src="{{ url_for('static' , filename='images/avatar01.jpg') }}" alt="">
+        </div>
+        <div class="question-group">
+            <p class="question-title"><a href="#">this is the title</a> </p>
+            <p class="question-content">this is the content </p>
+            <div class="question-info">
+                <span class="question-author">作者</span>
+                <span class="question-time">2017-08-24 15:45:45</span>
+            </div>
+        </div>
+    </li>
+    </ul>
 {% endblock %}
