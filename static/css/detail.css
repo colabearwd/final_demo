@@ -4,3 +4,28 @@
 .page-title{
     text-align: center;
 }
+
+.answer-list li{
+    list-style: none;
+    border-bottom: 1px solid #eeeeee;
+    padding-top: 10px;
+}
+.user-info img{
+    width: 50px;
+    height: 100%;
+}
+.user-info{
+    font-size: 16px;
+    color: #e4b9b9;
+    height: 50px;
+}
+.usernmae{
+    margin-left: 20px;
+}
+.create-time{
+    float: right;
+    margin-right: 20px;
+}
+.answer-content{
+    margin-left: 70px;
+}
